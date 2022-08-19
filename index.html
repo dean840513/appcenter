@@ -1,9 +1,26 @@
-<html>
-   <head>
-        <meta charset="UTF-8">
-		<title>html基础</title>
-   </head>
-        <body>
-		      <h3>第一次练习</h3>
-		</body>
-</html>
+<html lang="en" manifest="cache.appcache">
+	  <head>
+	    <meat charset="utf-8" />
+	  </head>
+	  <body>
+	     <h1><demo1/h1>
+	  
+	  <script type="text/javascript">
+	    window.addEventListener('load',function(e){
+	    //监听app cache的updateready事件
+	     window.applicationCache.addEventListener('updateready',function(e)){
+	     
+	    	console.log(window.applicationCache.status);
+	    	if(window.applicatioinCache.status==window.applicationCache.UPDATEREADY){
+	    	//application cache的版本号发生改年
+	    	  window.applicationCache.swapCache();
+	    	  window.location.reload();
+	    	}else {
+	    	  console.log("manifest没有更改");
+	    	}
+	    },false);
+	  },false);
+	  </script>
+	  </body>
+	  
+	</html>
